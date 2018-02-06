@@ -1178,6 +1178,10 @@ h2.title {
     padding-right: 25px;
 }
 
+.del-item{
+    cursor: pointer;
+}
+
 .product-details {
     margin-bottom: 40px;
     overflow: hidden;
