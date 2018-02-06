@@ -1,6 +1,7 @@
 <?php
 use app\components\MenuWidget;
 use yii\helpers\Html;
+use yii\helpers\Url;
 ?>
 <section id="slider"><!--slider-->
     <div class="container">
@@ -107,24 +108,23 @@ use yii\helpers\Html;
             </div>
 
             <div class="col-sm-9 padding-right">
-                <?php if(!empty($hits)): ?>
+                <?php if (!empty($hits)): ?>
                 <div class="features_items"><!--features_items-->
                     <h2 class="title text-center">Features Items</h2>
-                    <?php foreach($hits as $hit): ?>
+                    <?php foreach ($hits as $hit): ?>
                     <div class="col-sm-4">
                         <div class="product-image-wrapper">
                             <div class="single-products">
                                 <div class="productinfo text-center">
-<!--                                    <img src="images/home/product1.jpg" alt="" />-->
                                     <?= Html::img("@web/images/products/{$hit->img}", ['alt'=> $hit->name]) ?>
                                     <h2>$<?= $hit->price ?></h2>
-                                    <p><?= $hit->name ?></p>
+                                    <p><a href="<?= Url::to(['product/view', 'id' => $hit->id]) ?>"><?= $hit->name ?></a></p>
                                     <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                                 </div>
-                                <?php if($hit->new): ?>
+                                <?php if ($hit->new): ?>
                                     <?= Html::img("@web/images/home/new.png", ['alt'=> 'Новинка', 'class' => 'new']) ?>
                                 <?php endif; ?>
-                                <?php if($hit->sale): ?>
+                                <?php if ($hit->sale): ?>
                                     <?= Html::img("@web/images/home/sale.png", ['alt'=> 'Распродажа', 'class' => 'new']) ?>
                                 <?php endif; ?>
                             </div>

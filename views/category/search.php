@@ -51,7 +51,7 @@ use yii\helpers\Url;
 
             <div class="col-sm-9 padding-right">
                 <div class="features_items"><!--features_items-->
-                    <h2 class="title text-center"><?= $category->name ?></h2>
+                    <h2 class="title text-center">Поиск по запросу: <?= Html::encode($q) ?></h2>
                     <?php if (!empty($products)): ?>
                         <?php foreach ($products as $product): ?>
                     <div class="col-sm-4">
@@ -86,7 +86,7 @@ use yii\helpers\Url;
                     ]);
                     ?>
                     <?php else: ?>
-                        <h2>Здесь товаров пока нет!</h2>
+                        <h2>Ничего не найдено...</h2>
                     <?php endif; ?>
                 </div><!--features_items-->
             </div>
