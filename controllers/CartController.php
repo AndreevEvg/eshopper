@@ -12,6 +12,10 @@ class CartController extends AppController
     public function actionAdd()
     {
         $id = Yii::$app->request->get('id');
+        $qty = (int)Yii::$app->request->get('qty');
+        
+        $qty = !$qty ? 1 : $qty;
+        
         $product = Product::findOne($id);
         
         if (empty($product)) {
@@ -22,7 +26,11 @@ class CartController extends AppController
         $session->open();
         
         $cart = new Cart();
-        $cart->addToCart($product);
+        $cart->addToCart($product, $qty);
+        
+        if (!Yii::$app->request->isAjax) {
+            return $this->redirect(Yii::$app->request->referrer);
+        }
         
         $this->layout = false;
         
@@ -77,5 +85,11 @@ class CartController extends AppController
         return $this->render('cart-modal', [
             'session' => $session,
         ]);
+    }
+    
+    /* Переход по ссылке "Оформить заказ" */
+    public function actionView()
+    {
+        return $this->render('view');
     }
 }

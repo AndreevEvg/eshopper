@@ -44,9 +44,10 @@
  $('.add-to-cart').on('click', function(e){
     e.preventDefault();
     var id = $(this).data('id');
+    var qty = $('#qty').val();
     $.ajax({
         url: '/cart/add',
-        data: {id: id},
+        data: {id: id, qty: qty},
         type: 'GET',
         success: function(res){
             if (!res) alert('Ошибка');
