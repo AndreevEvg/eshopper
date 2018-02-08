@@ -1,0 +1,15 @@
+.navbar-inverse{
+    background-color: #40403E;
+}
+
+.navbar-inverse .navbar-brand{
+    color: #FE980F;
+}
+
+.navbar-inverse .navbar-brand:hover{
+    color: #FE980F;
+}
+
+.nav .nav-sidebar a{
+    color: #666663;
+}
