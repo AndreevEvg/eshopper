@@ -31,6 +31,7 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
+            //'loginUrl' => 'контроллер/экшен',
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',

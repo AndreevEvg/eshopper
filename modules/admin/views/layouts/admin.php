@@ -56,13 +56,14 @@ AdminAppAsset::register($this);
                     <li><a href="#">Reports</a></li>
                     <li><a href="#">Analytics</a></li>
                     <li><a href="#">Export</a></li>
+                    <li><a href="<?= Url::to(['/']) ?>">Exit</a></li>
                 </ul>
             </div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-              <div class="row placeholders">
-                  <?= $content ?>
-              </div>
+                <div class="row placeholders">
+                    <?= $content ?>
+                </div>
             </div>
         </div>
     </div>
