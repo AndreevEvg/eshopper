@@ -35,16 +35,16 @@ AdminAppAsset::register($this);
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">E-SHOPPER</a>
+                <a class="navbar-brand" href="<?= Url::to(['/admin']) ?>">E-SHOPPER</a>
             </div>
-            <div id="navbar" class="navbar-collapse collapse">
+<!--            <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Dashboard</a></li>
                     <li><a href="#">Settings</a></li>
                     <li><a href="#">Profile</a></li>
                     <li><a href="#">Help</a></li>
                 </ul>
-            </div>
+            </div>-->
         </div>
     </nav>
 
@@ -52,11 +52,10 @@ AdminAppAsset::register($this);
         <div class="row">
             <div class="col-sm-3 col-md-2 sidebar">
                 <ul class="nav nav-sidebar">
-                    <li class="active"><a href="#">Overview</a></li>
-                    <li><a href="#">Reports</a></li>
-                    <li><a href="#">Analytics</a></li>
-                    <li><a href="#">Export</a></li>
-                    <li><a href="<?= Url::to(['/']) ?>">Exit</a></li>
+                    <li class="active"><a href="<?= Url::to(['/admin/orders']) ?>">Заказы</a></li>
+                    <li><a href="<?= Url::to(['/admin/category']) ?>">Категории</a></li>
+                    <li><a href="#">Товары</a></li>
+                    <li><a href="<?= Url::to(['/']) ?>">Выход</a></li>
                 </ul>
             </div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
