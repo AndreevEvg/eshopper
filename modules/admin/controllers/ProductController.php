@@ -87,12 +87,15 @@ class ProductController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             $model->image = UploadedFile::getInstance($model, 'image');
             if ($model->image) {
                 $model->upload();
             }
+            
+            unset($model->image);
+            $model->gallery = UploadedFile::getInstances($model, 'gallery');
+            $model->uploadGallery();
             
             Yii::$app->session->setFlash('FormSubmitted', "Товар обновлен!");
             return $this->redirect(['view', 'id' => $model->id]);
