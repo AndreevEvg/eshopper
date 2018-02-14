@@ -54,13 +54,21 @@ AdminAppAsset::register($this);
                 <ul class="nav nav-sidebar">
                     <li class="active"><a href="<?= Url::to(['/admin/orders']) ?>">Заказы</a></li>
                     <li><a href="<?= Url::to(['/admin/category']) ?>">Категории</a></li>
-                    <li><a href="#">Товары</a></li>
+                    <li><a href="<?= Url::to(['/admin/product']) ?>">Товары</a></li>
                     <li><a href="<?= Url::to(['/']) ?>">Выход</a></li>
                 </ul>
             </div>
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
                 <div class="row placeholders">
+                    <!-- Флеш сообщения -->
+                    <?php if(Yii::$app->session->hasFlash('FormSubmitted')): ?>
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <strong><?= Yii::$app->session->getFlash('FormSubmitted'); ?></strong>
+                        </div>
+                    <?php endif; ?>
+                    
                     <?= $content ?>
                 </div>
             </div>

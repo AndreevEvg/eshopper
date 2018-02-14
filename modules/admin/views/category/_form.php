@@ -20,7 +20,8 @@ use yii\helpers\ArrayHelper;
     <div class="form-group field-category-parent_id required has-success">
         <label class="control-label" for="category-parent_id">Родительская категория</label>
             <select id="category-parent_id" class="form-control" name="Category[parent_id]" aria-required="true" aria-invalid="false">
-                <?= app\components\MenuWidget::widget(['tpl' => 'select']) ?>
+                <option value="0">Самостоятельная категория</option>
+                <?= app\components\MenuWidget::widget(['tpl' => 'select', 'model' => $model]) ?>
             </select>
     </div>
 
